@@ -5,6 +5,7 @@ const Login = () => {
       <form action="#">
         <input type="email" placeholder="your mail" />
         <input type="password" placeholder="your password" />
+        <input type="submit" value={'Log in'} />
       </form>
     </div>
   );
