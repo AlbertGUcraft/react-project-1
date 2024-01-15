@@ -1,20 +1,20 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 const Nav = () => {
   return (
     <nav>
       <Outlet />
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/login">Log In</Link>
+          <NavLink to="/login">Log In</NavLink>
         </li>
         <li>
-          <Link to="/register">Register</Link>
+          <NavLink to="/register">Register</NavLink>
         </li>
         <li>
-          <Link to="/users">Users</Link>
+          <NavLink to="/users">Users</NavLink>
         </li>
       </ul>
     </nav>
