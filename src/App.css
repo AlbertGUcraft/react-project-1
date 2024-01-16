@@ -155,3 +155,13 @@ nav {
     border: none;
     outline: none;
 }
+
+.user-list {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-card {
+    padding: 30px;
+}
