@@ -32,3 +32,126 @@ nav {
     height: 150px;
     background-color: darkblue;
 }
+.go_back {
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: blueviolet;
+}
+.not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    margin-top: 100px;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    margin-top: 100px;
+}
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    margin-top: 100px;
+}
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+.login form input {
+    margin-top: 25px;
+    padding: 15px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.login form input[type="submit"] {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.login h2 {
+    font-size: 40px;
+}
+.home h2 {
+    font-size: 40px;
+}
+.x button {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 15px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+#fchild {
+    margin-right: 10px;
+}
+.renderCounter input {
+    padding: 15px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.register {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    margin-top: 100px;
+}
+.register h2 {
+    font-size: 40px;
+}
+.register form {
+    display: flex;
+    flex-direction: column;
+}
+.register form input {
+    margin-top: 25px;
+    padding: 15px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.register form input[type="submit"] {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding: 15px 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}

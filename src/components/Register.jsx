@@ -1,3 +1,4 @@
+import '../index.css';
 function Register() {
   return (
     <div className="register">
@@ -6,6 +7,7 @@ function Register() {
         <input type="text" placeholder="FirstName LastName" />
         <input type="email" placeholder="your mail" />
         <input type="password" placeholder="your password" />
+        <input type="submit" value={'Register'} />
       </form>
     </div>
   );
