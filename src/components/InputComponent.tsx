@@ -1,19 +1,21 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, ChangeEvent } from 'react';
 
 const InputComponent = () => {
-  const ref = useRef(0); // Move useRef inside the component
-  const [count, setCount] = useState(0);
+  const ref = useRef<number>(0);
+  const [count, setCount] = useState<string | number>(0); 
+
   console.log(count);
+
   return (
     <div className="renderCounter">
       <h2>Count is: {(ref.current = ref.current + 1)}</h2>
       <input
-        onChange={(e) => {
+        onChange={(e: ChangeEvent<HTMLInputElement>) => {
           setCount(e.target.value);
         }}
         type="text"
         name=""
-        placeholder="rendercouneter"
+        placeholder="rendercounter"
       />
     </div>
   );

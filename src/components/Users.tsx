@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../index.css';
+import { TUser } from './interface';
 
 function Users() {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState<TUser[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   useEffect(() => {
@@ -20,7 +21,7 @@ function Users() {
     fetchUsers();
   }, [currentPage]);
 
-  const handlePageClick = (page) => {
+  const handlePageClick = (page:number) => {
     setCurrentPage(page);
   };
 
@@ -45,7 +46,11 @@ function Users() {
   );
 }
 
-const UserCard = ({ user }) => {
+type UserCardProps = {
+  user: TUser;
+}
+
+const UserCard = ({ user }: UserCardProps) => {
   const { first_name, last_name, email, avatar } = user;
 
   return (

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
 import '../index.css';
-
+import { FormEvent, useState } from 'react';
 const Login = () => {
-  const handleSubmit = async (e) => {
+  const [registrationMessage, setRegistrationMessage] = useState('');
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.currentTarget);
 
     try {
       const logParams = {
@@ -21,22 +21,16 @@ const Login = () => {
         body: JSON.stringify(logParams)
       });
 
-      const res = await response.json();
-
       if (response.ok) {
-        console.log('You Are Logged in', res);
+        setRegistrationMessage('You Are Logged In');
       } else {
-        console.log('Login failed:', res.error);
+        setRegistrationMessage('Something went wrong');
       }
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error('Error:', (error as { message: string }).message);
+      setRegistrationMessage('Something went wrong');
     }
   };
-
-  useEffect(() => {
-    // You don't need to call handleSubmit here
-    // Move the code that needs to run on component mount outside the useEffect
-  }, []);
 
   return (
     <div className="login">
@@ -46,6 +40,7 @@ const Login = () => {
         <input type="password" name="password" placeholder="your password" required />
         <input type="submit" value={'Log in'} />
       </form>
+      <p>{registrationMessage}</p>
     </div>
   );
 };
