@@ -14,14 +14,14 @@ function Users() {
         setTotalPages(data.total_pages);
         setUsers(data.data);
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.info('Error fetching users:', (error as { message: string }).message);
       }
     };
 
     fetchUsers();
   }, [currentPage]);
 
-  const handlePageClick = (page:number) => {
+  const handlePageClick = (page: number) => {
     setCurrentPage(page);
   };
 
@@ -48,7 +48,7 @@ function Users() {
 
 type UserCardProps = {
   user: TUser;
-}
+};
 
 const UserCard = ({ user }: UserCardProps) => {
   const { first_name, last_name, email, avatar } = user;

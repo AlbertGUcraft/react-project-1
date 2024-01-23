@@ -7,10 +7,13 @@ function Register() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     try {
-      const regParams = [...formData].reduce((accumulator, currentValue) => {
-        accumulator[currentValue[0]] = currentValue[1];
-        return accumulator;
-      }, {} as { [key: string]: string | FormDataEntryValue });
+      const regParams = [...formData].reduce(
+        (accumulator, currentValue) => {
+          accumulator[currentValue[0]] = currentValue[1];
+          return accumulator;
+        },
+        {} as { [key: string]: string | FormDataEntryValue }
+      );
 
       const response = await fetch('https://reqres.in/api/register', {
         method: 'POST',
@@ -28,7 +31,7 @@ function Register() {
         setRegistrationMessage('Something went wrong');
       }
     } catch (error) {
-      console.error('Something went wrong:', (error as { message: string }).message);
+      console.info('Something went wrong:', (error as { message: string }).message);
       setRegistrationMessage('Something went wrong');
     }
   };

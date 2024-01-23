@@ -1,11 +1,15 @@
 import { useState, lazy, Suspense } from 'react';
 
 import '../index.css';
+
 const MousePositionComponent = lazy(() => import('./MousePositionComponent'));
 const InputComponent = lazy(() => import('./InputComponent'));
 
 const Home = () => {
   const [showMousePosition, setShowMousePosition] = useState(true);
+  function x() {
+    setShowMousePosition(false);
+  }
   return (
     <div className="home">
       <div className="x">
@@ -13,7 +17,7 @@ const Home = () => {
         <button id="fchild" onClick={() => setShowMousePosition(true)}>
           Show Mouse Position
         </button>
-        <button onClick={() => setShowMousePosition(false)}>Render Counter</button>
+        <button onClick={x}>Render Counter</button>
         {showMousePosition && (
           <Suspense fallback={<div>Loading...</div>}>
             <MousePositionComponent />

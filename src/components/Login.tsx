@@ -1,5 +1,6 @@
 import '../index.css';
 import { FormEvent, useState } from 'react';
+
 const Login = () => {
   const [registrationMessage, setRegistrationMessage] = useState('');
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -27,7 +28,7 @@ const Login = () => {
         setRegistrationMessage('Something went wrong');
       }
     } catch (error) {
-      console.error('Error:', (error as { message: string }).message);
+      console.info('Error:', (error as { message: string }).message);
       setRegistrationMessage('Something went wrong');
     }
   };

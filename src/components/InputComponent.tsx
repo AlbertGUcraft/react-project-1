@@ -2,9 +2,9 @@ import { useRef, useState, ChangeEvent } from 'react';
 
 const InputComponent = () => {
   const ref = useRef<number>(0);
-  const [count, setCount] = useState<string | number>(0); 
+  const [count, setCount] = useState<string | number>(0);
 
-  console.log(count);
+  console.info(count);
 
   return (
     <div className="renderCounter">

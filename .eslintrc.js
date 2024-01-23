@@ -1,3 +1,4 @@
+
 module.exports={
   ignorePatterns: ['node_modules', 'build', '*.js'],
   parser: '@typescript-eslint/parser',
@@ -43,7 +44,7 @@ module.exports={
     'import/newline-after-import': 1,
     'max-len': [
       'error', 
-      { 
+      {
         'comments': 80,
         'ignoreStrings': true,
         'ignoreTemplateLiterals': true,

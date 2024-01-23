@@ -1,5 +1,7 @@
 import '../index.css';
+
 import { Link } from 'react-router-dom';
+
 function Notfound() {
   return (
     <div className="not_found">
