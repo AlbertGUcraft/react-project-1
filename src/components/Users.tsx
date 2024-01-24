@@ -1,25 +1,29 @@
 import { useState, useEffect } from 'react';
 import '../index.css';
 import { TUser } from './interface';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsers } from '../store/actions';
 
 function Users() {
-  const [users, setUsers] = useState<TUser[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const dispatch = useDispatch();
+  const users = useSelector((state: any) => state.user.users);
+
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(`https://reqres.in/api/users?per_page=3&page=${currentPage}`);
         const data = await response.json();
+        dispatch(setUsers(data.data));
         setTotalPages(data.total_pages);
-        setUsers(data.data);
       } catch (error) {
         console.info('Error fetching users:', (error as { message: string }).message);
       }
     };
 
     fetchUsers();
-  }, [currentPage]);
+  }, [currentPage, dispatch]);
 
   const handlePageClick = (page: number) => {
     setCurrentPage(page);
@@ -28,7 +32,7 @@ function Users() {
   return (
     <div className="users">
       <div className="user-list">
-        {users.map((user) => (
+        {users.map((user: any) => (
           <UserCard key={user.id} user={user} />
         ))}
       </div>
